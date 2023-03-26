@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Docs</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+
+
+    <script src="./fetcher.js"></script>
+</head>
+
+</head>
+
+<style>
+    body {
+        background-color: rgb(20, 17, 28);
+        font-family: monospace;
+        color: white;
+        padding: 15px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .method_container {
+        margin: 30px 20px;
+    }
+
+    .code_heading_container {
+        background-color: rgb(53, 45, 75);
+        padding: 1px;
+        border-left: 5px solid rgb(159, 127, 255);
+    }
+
+    .code_heading {
+        margin: 5px;
+    }
+
+    #colored_get {
+        color: orange;
+    }
+
+    #colored_get_random {
+        color: rgb(255, 92, 92);
+    }
+
+    #colored_get_id {
+        color: rgb(50, 249, 90);
+    }
+
+    .method_info {
+        font-weight: bold;
+    }
+
+    .flex_container {
+        display: flex;
+
+
+    }
+
+    #id_input {
+        background-color: transparent;
+        padding: 2px;
+        color: white;
+        font-weight: bold;
+        outline: none;
+        border: 2px solid white;
+        margin-left: 20px;
+        padding: 2px;
+    }
+
+    .test_button {
+        padding: 5px;
+        border: 2px solid rgb(50, 249, 90);
+        background-color: transparent;
+        color: white;
+        border-radius: 2px;
+        font-weight: bold;
+        font-family: monospace;
+    }
+
+    .test_button:hover {
+        background-color: green;
+        border-color: rgb(0, 255, 51);
+    }
+</style>
+
+<body>
+
+
+    <!----------------- /get Method ----------------->
+    <div class="method_container">
+
+        <div class="code_heading_container">
+            <h3 class="code_heading"><span id="colored_get">/get </span> method</h3>
+        </div>
+
+        <div class="method_info_container">
+            <p class="method_info">
+                Renders this webpage.
+            </p>
+        </div>
+
+    </div>
+
+    <!----------------- /get/random Method ----------------->
+    <div class="method_container">
+
+        <div class="code_heading_container">
+            <h3 class="code_heading"><span id="colored_get_random">/get/random </span> method</h3>
+        </div>
+
+        <div class="method_info_container">
+            <p class="method_info">
+                Returns a random joke from the dataset in JSON Format.
+            </p>
+        </div>
+
+        <div class="try_it_container">
+
+            <button class="test_button" onclick="GetRandomJoke()">Test</button>
+
+            <div class="output_container">
+                <pre>
+                    <code id="get_random_code_block">
+                    </code>
+                </pre>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!----------------- /get/id/<int:id> Method ----------------->
+    <div class="method_container">
+
+        <div class="code_heading_container">
+            <h3 class="code_heading"><code id="colored_get_id">/get/id/&ltint:id&gt </code> method</h3>
+        </div>
+
+        <div class="method_info_container">
+            <p class="method_info">
+                Returns a random joke from the dataset with the specified id in JSON Format.
+                &ltint:id&gt is the paramter to pass while requesting the webpage. It accepts an Integer.
+            </p>
+        </div>
+
+        <div class="try_it_container">
+
+            <div class="flex_container">
+                <button class="test_button">Test</button>
+                <input type="number" id="id_input" placeholder="Joke ID">
+
+                <!-- <div class="output_container">
+                    <pre>
+                        <code id="get_by_id_code_block">
+                        
+                        </code>
+                    </pre>
+
+                </div> -->
+
+            </div>
+
+        </div>
+
+</body>
+
+<script>
+
+    hljs.highlightAll()
+
+    function GetRandomJoke() {
+        // var hljs = window.hljs;
+
+        fetch('http://127.0.0.1:5000/get/random')
+            .then(response => response.json())
+            .then(data => {
+                var codeBlock = document.getElementById('get_random_code_block');
+                codeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tsetup: ${data['question']}\n\tpunchline: ${data['answer']}\n}`;
+                hljs.highlightAll()
+            })
+            .catch(error => console.error(error));
+    }
+
+
+
+</script>
+
+</html>
