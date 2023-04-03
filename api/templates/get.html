@@ -179,7 +179,7 @@
     function GetRandomJoke() {
         // var hljs = window.hljs;
 
-        fetch('http://127.0.0.1:5000/get/random')
+        fetch('https://jokeapi.onrender.com/get/random')
             .then(response => response.json())
             .then(data => {
                 var codeBlock = document.getElementById('get_random_code_block');
