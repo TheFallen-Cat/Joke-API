@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import dbmanager as db
-import threading
+import os
 
 app = Flask(__name__, template_folder="templates", static_url_path="")
 
@@ -17,6 +17,7 @@ def get_page():
 
 @app.route("/get/random")
 def random_joke():
+
     joke = db.random_joke()
 
     req = {}

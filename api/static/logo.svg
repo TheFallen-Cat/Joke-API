@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="230" height="60" viewBox="0 0 230 60">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 58.333px;
+      }
+
+      .cls-1 {
+        fill: #69a8de;
+        font-family: "JUST Sans";
+      }
+
+      .cls-2 {
+        fill: #698cde;
+        font-family: "Space Crusaders";
+      }
+    </style>
+  </defs>
+  <text id="Joke" class="cls-1" x="-2" y="50">Joke</text>
+  <text id="apI" class="cls-2" x="133" y="51">apI</text>
+</svg>

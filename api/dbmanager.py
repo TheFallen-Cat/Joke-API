@@ -1,7 +1,8 @@
 import sqlite3
 import random
+import os
 
-conn = sqlite3.connect("jokes.db", check_same_thread=False)
+conn = sqlite3.connect(os.path.join(os.getcwd(), "jokes.db"), check_same_thread=False)
 
 cursor = conn.cursor()
 
