@@ -1,21 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="230" height="60" viewBox="0 0 230 60">
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="80" viewBox="75 20 250 80">
   <defs>
     <style>
-      .cls-1, .cls-2 {
-        font-size: 58.333px;
-      }
-
       .cls-1 {
-        fill: #69a8de;
-        font-family: "JUST Sans";
+        font-size: 58.333px;
+        fill: #fff;
+        font-family: Intro-Trial;
+        font-weight: 700;
+        font-style: italic;
       }
 
       .cls-2 {
-        fill: #698cde;
-        font-family: "Space Crusaders";
+        fill: #dd2726;
+      }
+
+      .cls-3 {
+        fill: #ec2e3d;
       }
     </style>
   </defs>
-  <text id="Joke" class="cls-1" x="-2" y="50">Joke</text>
-  <text id="apI" class="cls-2" x="133" y="51">apI</text>
+  <text id="Joke_API" data-name="Joke API" class="cls-1" x="74" y="80">Joke<tspan class="cls-2"> <tspan class="cls-3">API</tspan></tspan></text>
 </svg>
