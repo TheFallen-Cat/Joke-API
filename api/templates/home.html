@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <style>
     body {
         background-color: rgb(20, 17, 28);
-        color: rgb(105 168 222);
-        padding: 0px;
+        padding: 50px;
         margin: 0px;
         box-sizing: border-box;
+    }
+
+    :root {
+        --main-text-color: #E4DCCF;
+
     }
 
     @font-face {
@@ -21,80 +28,108 @@
         src: url("Fonts/intro.otf");
     }
 
+    @font-face {
+        font-family: "Geomatrix";
+        src: url("Fonts/Geomatrix.otf");
+    }
+
     #navbar {
-        background-color: rgb(30, 24, 44);
-        padding: 5px;
-    }
-
-    #main_contents {
-        height: 40%;
-        text-align: center;
-        justify-content: flex-end;
-        align-items: center;
+        /* background-color: rgb(30, 24, 44); */
+        padding: 10px 100px 10px 100px;
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        justify-content: space-between;
     }
 
+    #logo_container {
+        display: inline;
+        order: 1;
+    }
 
     #logoimage {
         pointer-events: none;
-        width: 25%;
+        width: 50%;
+        display: inline;
     }
 
-    .text {
-        color: aliceblue;
-        font-family: "intro";
-        font-family: "intro";
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    #button_holder {
+    #links_container {
+        display: inline;
         display: flex;
-        gap: 40px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        margin-top: 100px;
+        margin: auto 0px;
+        flex-direction: row-reverse;
+        order: 1;
+
     }
 
-    .main_buttons {
-        color: white;
-        border: 3px solid red;
-        background-color: transparent;
-        font-family: "intro";
-        padding: 10px 20px 10px 20px;
-        font-size: 16px;
+    ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        display: inline;
+    }
+
+    ul li {
+        display: inline;
+        margin: 10px;
+        padding: 8px;
         border-radius: 5px;
-        transition: all 0.2s;
+
     }
 
-    .main_buttons:hover {
-        border-color: rgb(40, 88, 130);
+    ul li:hover {
+        background-color: rgb(58, 48, 82);
+    }
+
+    .hyperlinks {
+        color: white;
+        text-decoration: none;
+        font-family: intro;
+        font-size: 14px;
+        display: inline;
+        margin: 0px;
+    }
+
+    #joketext_container {
+        margin: 100px;
+        display: inline-block;
+        /* margin: auto; */
+    }
+
+    #joketext {
+        color: white;
+        font-family: Geomatrix;
+        font-size: 26px;
+
+        text-align: center;
     }
 </style>
 
 <body>
 
-    <!-- <div id="navbar">
-        <img src="/logo.svg" alt="Logo" id="logoimage" style="width:120px;">
 
-    </div> -->
+    <div id="navbar">
 
-    <div id="main_contents">
-        <img src="/newlogo.svg" alt="Logo" id="logoimage" class="main_container_contents">
-        <span class="text" class="main_container_contents">Free - Simple - Amazing &#128293</span>
+        <div id="logo_container">
+            <img src="/newlogo.svg" alt="Logo" id="logoimage" class="main_container_contents">
+        </div>
+
+        <div id="links_container">
+            <ul>
+                <li><a href="http://127.0.0.1:5000/get" class="hyperlinks">API Usage</a></li>
+                <li><a href="" class="hyperlinks">Github</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div id="button_holder">
-        <button class="main_buttons">Try It !</button>
-        <button class="main_buttons">Read Docs</button>
+    <div id="joketext_container">
+        <p id="joketext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dolorum ullam deleniti
+            voluptates.
+            Modi reiciendis eos laborum magnam dolor recusandae excepturi cumque aliquam doloremque, perspiciatis,
+            praesentium veritatis dolorem mollitia. Sint!
+        </p>
+
+        <button id="random_joke_button">Random</button>
     </div>
 
-    <footer>
-    </footer>
 
 </body>
 
