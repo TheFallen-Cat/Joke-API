@@ -3,13 +3,19 @@ from flask_sqlalchemy import SQLAlchemy
 import random
 
 import sqlite3
+import os
 
 app = Flask(__name__, template_folder="templates", static_url_path="")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///joke.db"
+
+base_directory = os.path.abspath(os.path.dirname(__file__))
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(base_directory, 'jokes.db')
+
 
 db = SQLAlchemy(app)
 
 class Joke(db.Model):
+    __tablename__ = 'joke'
     id = db.Column(db.Integer, primary_key=True)
     joke = db.Column(db.String(150), nullable=False)
 
@@ -40,12 +46,11 @@ def return_random_joke():
 @app.route("/get/id/<int:id>")
 def id_joke(id):
     
-    with app.app_context():
-        joke = Joke.query.filter_by(id=id).first()
+    joke = Joke.query.filter_by(id=id).first()
 
-        return str(joke.joke)
+    return str(joke.joke)
 
 
 if __name__ == "__main__":
+    app.run(debug=False, host="0.0.0.0")
 
-    app.run()
