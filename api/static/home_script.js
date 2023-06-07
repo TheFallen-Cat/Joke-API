@@ -1,0 +1,13 @@
+const randomButton = document.getElementById('random_joke_button');
+const jokeText = document.getElementById('joketext');
+
+function showRandomJoke() {
+
+    fetch('https://jokeapi.ddns.net/get/random')
+        .then(response => response.json())
+        .then(data => { jokeText.innerText = data; })
+
+        .catch(error => { console.log(error); })
+}
+
+randomButton.addEventListener('click', showRandomJoke)

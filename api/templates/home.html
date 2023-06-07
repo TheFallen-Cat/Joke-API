@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home_script.js" defer></script>
+    <title>Home</title>
 </head>
 
 <style>
@@ -142,10 +143,11 @@
 
         <div id="links_container">
             <ul>
-                <li><a href="http://127.0.0.1:5000/get" class="hyperlinks">API Usage</a></li>
+                <li><a href="get.html" class="hyperlinks">API Usage</a></li>
                 <li><a href="https://www.github.com/TheFallen-Cat" class="hyperlinks">Github</a></li>
-                <li><a href="{{ url_for('static', filename='about.html') }}" class="hyperlinks">About</a></li>
-                <li><a href="{{ url_for('static', filename='support.html') }}" class="hyperlinks">Support</a></li>
+                <li><a href="about.html" class="hyperlinks">About</a></li>
+                <!-- <li><a href="{{ url_for('static', filename='support.html') }}" class="hyperlinks">Support</a></li> -->
+                <li><a href="support.html" class="hyperlinks">Support</a></li>
             </ul>
         </div>
     </div>

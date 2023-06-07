@@ -21,7 +21,7 @@ class Joke(db.Model):
 
     def __init__(self, joke):
         self.joke = joke
-
+    
 
 @app.route("/")
 def home():
@@ -36,11 +36,13 @@ def get_page():
 @app.route("/get/random")
 def return_random_joke():
 
-    random_id = random.randrange(1, 4650)
-    with app.app_context():
-        joke = Joke.query.filter_by(id=random_id).first()
+    no_of_rows = Joke.query.count()
 
-        return str(joke.joke)
+    random_id = random.randrange(1, no_of_rows)
+
+    joke = Joke.query.filter_by(id=random_id).first()
+
+    return str(joke.joke)
 
 
 @app.route("/get/id/<int:id>")
@@ -52,5 +54,5 @@ def id_joke(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=False)
 
