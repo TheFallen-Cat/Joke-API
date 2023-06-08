@@ -7,7 +7,7 @@ const idEntry = document.getElementById('id_input');
 function GetRandomJoke() {
     // var hljs = window.hljs;
 
-    fetch('http://127.0.0.1:5000/get/random')
+    fetch('https://jokeapi.ddns.net/get/random')
         .then(response => response.json())
         .then(data => {
             var randomCodeBlock = document.getElementById('get_random_code_block');
@@ -19,7 +19,7 @@ function GetRandomJoke() {
 function GetIdJoke() {
 
     let id = idEntry.value;
-    fetch(`http://127.0.0.1:5000/get/id/${id}`)
+    fetch(`https://jokeapi.ddns.net/get/id/${id}`)
         .then(response => response.json())
         .then(data => {
             var idCodeBlock = document.getElementById('get_by_id_code_block');
