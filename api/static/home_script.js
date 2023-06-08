@@ -3,11 +3,12 @@ const jokeText = document.getElementById('joketext');
 
 function showRandomJoke() {
 
-    fetch('https://jokeapi.ddns.net/get/random')
+    fetch('http://127.0.0.1:5000/get/random')
         .then(response => response.json())
-        .then(data => { jokeText.innerText = data; })
+        .then(data => { jokeText.innerText = data['main_joke']; })
 
         .catch(error => { console.log(error); })
 }
 
 randomButton.addEventListener('click', showRandomJoke)
+document.addEventListener('DOMContentLoaded', showRandomJoke)

@@ -42,17 +42,26 @@ def return_random_joke():
 
     joke = Joke.query.filter_by(id=random_id).first()
 
-    return str(joke.joke)
+    json_joke = {'id':joke.id, 'main_joke':joke.joke}
 
+    return json_joke
 
 @app.route("/get/id/<int:id>")
 def id_joke(id):
     
     joke = Joke.query.filter_by(id=id).first()
 
-    return str(joke.joke)
+    json_joke = {'id':joke.id, 'main_joke':joke.joke}
+
+    return json_joke
+
+
+@app.route("/about/")
+def about_page():
+
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 

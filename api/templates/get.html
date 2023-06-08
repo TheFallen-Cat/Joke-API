@@ -8,6 +8,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <!-- <script src="get_script.js" defer></script> -->
 
 
 </head>
@@ -78,16 +79,15 @@
 
     .test_button {
         padding: 5px;
-        border: 2px solid rgb(50, 249, 90);
-        background-color: transparent;
+        border: 2px solid white;
         color: white;
-        border-radius: 2px;
+        background-color: rgb(58, 48, 82);
+        border-radius: 5px;
         font-weight: bold;
         font-family: monospace;
     }
 
     .test_button:hover {
-        background-color: green;
         border-color: rgb(0, 255, 51);
     }
 
@@ -130,7 +130,7 @@
 
         <div class="try_it_container">
 
-            <button class="test_button" onclick="GetRandomJoke()">Test</button>
+            <button class="test_button" id="random_test_button">Test</button>
 
             <div class="output_container">
                 <pre>
@@ -161,17 +161,17 @@
         <div class="try_it_container">
 
             <div class="flex_container">
-                <button class="test_button">Test</button>
+                <button class="test_button" id="id_test_button">Test</button>
                 <input type="number" id="id_input" placeholder="Joke ID">
 
-                <!-- <div class="output_container">
-                    <pre>
-                        <code id="get_by_id_code_block">
-                        
-                        </code>
-                    </pre>
+            </div>
 
-                </div> -->
+            <div class="output_container">
+                <pre>
+                    <code id="get_by_id_code_block">
+                    
+                    </code>
+                </pre>
 
             </div>
 
@@ -181,20 +181,51 @@
 
 <script>
 
+
     hljs.highlightAll()
+
+    const randomTestButton = document.getElementById('random_test_button');
+
+    const idTestButton = document.getElementById('id_test_button');
+    const idEntry = document.getElementById('id_input');
+
 
     function GetRandomJoke() {
         // var hljs = window.hljs;
 
-        fetch('https://jokeapi.onrender.com/get/random')
+        fetch('http://127.0.0.1:5000/get/random')
             .then(response => response.json())
             .then(data => {
-                var codeBlock = document.getElementById('get_random_code_block');
-                codeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tsetup: ${data['question']}\n\tpunchline: ${data['answer']}\n}`;
+                var randomCodeBlock = document.getElementById('get_random_code_block');
+                randomCodeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tjoke: ${data['main_joke']}\n}`;
                 hljs.highlightAll()
             })
             .catch(error => console.error(error));
     }
+
+    function GetIdJoke() {
+
+        let id = idEntry.value;
+        var idCodeBlock = document.getElementById('get_by_id_code_block');
+
+
+        if (id == null || id == "") {
+            idCodeBlock.innerHTML = `{\n\terror: No id found\n}`
+        }
+        fetch(`http://127.0.0.1:5000/get/id/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                idCodeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tjoke: ${data['main_joke']}\n}`;
+                hljs.highlightAll()
+
+            })
+            .catch(error => console.error(error));
+    }
+
+    randomTestButton.addEventListener('click', GetRandomJoke);
+    idTestButton.addEventListener('click', GetIdJoke);
+
+
 
 
 
