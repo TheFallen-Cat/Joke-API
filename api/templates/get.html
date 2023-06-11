@@ -8,7 +8,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <!-- <script src="get_script.js" defer></script> -->
+    <script src="{{ url_for('static', filename='get_script.js') }}" type="text/javascript" defer></script>
 
 
 </head>
@@ -179,56 +179,14 @@
 
 </body>
 
+
+
 <script>
-
-
     hljs.highlightAll()
 
-    const randomTestButton = document.getElementById('random_test_button');
-
-    const idTestButton = document.getElementById('id_test_button');
-    const idEntry = document.getElementById('id_input');
-
-
-    function GetRandomJoke() {
-        // var hljs = window.hljs;
-
-        fetch('https://jokeapi.ddns.net/get/random')
-            .then(response => response.json())
-            .then(data => {
-                var randomCodeBlock = document.getElementById('get_random_code_block');
-                randomCodeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tjoke: ${data['main_joke']}\n}`;
-                hljs.highlightAll()
-            })
-            .catch(error => console.error(error));
-    }
-
-    function GetIdJoke() {
-
-        let id = idEntry.value;
-        var idCodeBlock = document.getElementById('get_by_id_code_block');
-
-
-        if (id == null || id == "") {
-            idCodeBlock.innerHTML = `{\n\terror: No id found\n}`
-        }
-        fetch(`https://jokeapi.ddns.net/get/id/${id}`)
-            .then(response => response.json())
-            .then(data => {
-                idCodeBlock.innerHTML = `{\n\tid: ${data['id']}\n\tjoke: ${data['main_joke']}\n}`;
-                hljs.highlightAll()
-
-            })
-            .catch(error => console.error(error));
-    }
-
-    randomTestButton.addEventListener('click', GetRandomJoke);
-    idTestButton.addEventListener('click', GetIdJoke);
-
-
-
-
-
 </script>
+
+
+
 
 </html>

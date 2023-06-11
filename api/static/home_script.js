@@ -3,7 +3,7 @@ const jokeText = document.getElementById('joketext');
 
 function showRandomJoke() {
 
-    fetch('https://jokeapi.ddns.net/get/random')
+    fetch('/get/random')
         .then(response => response.json())
         .then(data => { jokeText.innerText = data['main_joke']; })
 
