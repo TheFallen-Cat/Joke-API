@@ -1,1 +1,3 @@
-<h1 align=center> ![JokeAPI](app/static/images/newlogo.svg) </h1>
+<p align="center">
+  <img src="https://github.com/TheFallen-Cat/Joke-API/blob/master/app/static/images/newlogo.svg" alt="JokeAPI"/>
+</p>
