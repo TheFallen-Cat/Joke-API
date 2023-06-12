@@ -8,105 +8,12 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <script src="{{ url_for('static', filename='api_script.js') }}" type="text/javascript" defer></script>
+
+    <script src="{{ url_for('static', filename='scripts/api.js') }}" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/api.css') }}">
 
 
 </head>
-
-</head>
-
-<style>
-    body {
-        background-color: rgb(20, 17, 28);
-        font-family: monospace;
-        padding: 15px;
-    }
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-    .method_container {
-        margin: 30px 20px;
-    }
-
-    .code_heading_container {
-        background-color: rgb(53, 45, 75);
-        padding: 1px;
-        border-left: 5px solid rgb(159, 127, 255);
-    }
-
-    .code_heading {
-        margin: 5px;
-    }
-
-    #colored_get {
-        color: orange;
-    }
-
-    #colored_get_random {
-        color: rgb(255, 92, 92);
-    }
-
-    #colored_get_id {
-        color: rgb(50, 249, 90);
-    }
-
-    .method_info {
-        font-weight: bold;
-        color: white;
-        font-size: 16px;
-    }
-
-    .flex_container {
-        display: flex;
-
-
-    }
-
-    #id_input {
-        background-color: transparent;
-        padding: 2px;
-        color: white;
-        font-weight: bold;
-        outline: none;
-        border: 2px solid white;
-        margin-left: 20px;
-        padding: 2px;
-    }
-
-    .test_button {
-        padding: 5px;
-        border: 2px solid white;
-        color: white;
-        background-color: rgb(58, 48, 82);
-        border-radius: 5px;
-        font-weight: bold;
-        font-family: monospace;
-    }
-
-    .test_button:hover {
-        border-color: rgb(0, 255, 51);
-    }
-
-    .method_text {
-        color: white;
-    }
-
-    #options_container {
-        margin: 20px;
-    }
-
-    #home_link {
-        color: white;
-        text-decoration: none;
-        font-family: monospace;
-        font-weight: bold;
-        font-size: 16px;
-    }
-</style>
 
 <body>
 

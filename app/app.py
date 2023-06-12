@@ -4,7 +4,7 @@ import random
 
 import os
 
-app = Flask(__name__, template_folder="templates", static_url_path="")
+app = Flask(__name__, template_folder="templates", static_url_path="", static_folder="static")
 
 base_directory = os.path.abspath(os.path.dirname(__file__))
 
