@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 import random
 
-import sqlite3
 import os
 
 app = Flask(__name__, template_folder="templates", static_url_path="")
