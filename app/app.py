@@ -27,12 +27,12 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/get/")
+@app.route("/api/")
 def get_page():
-    return render_template("get.html")
+    return render_template("api.html")
 
 
-@app.route("/get/random")
+@app.route("/api/random")
 def return_random_joke():
 
     no_of_rows = Joke.query.count()
@@ -45,7 +45,7 @@ def return_random_joke():
 
     return json_joke
 
-@app.route("/get/id/<int:id>")
+@app.route("/api/id/<int:id>")
 def id_joke(id):
     
     joke = Joke.query.filter_by(id=id).first()

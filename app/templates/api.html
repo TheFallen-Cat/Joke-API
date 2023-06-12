@@ -8,7 +8,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <script src="{{ url_for('static', filename='get_script.js') }}" type="text/javascript" defer></script>
+    <script src="{{ url_for('static', filename='api_script.js') }}" type="text/javascript" defer></script>
 
 
 </head>
@@ -94,16 +94,32 @@
     .method_text {
         color: white;
     }
+
+    #options_container {
+        margin: 20px;
+    }
+
+    #home_link {
+        color: white;
+        text-decoration: none;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 16px;
+    }
 </style>
 
 <body>
 
 
+    <div id="options_container">
+        <a href="/" id="home_link">
+            < Back to Home</a>
+    </div>
     <!----------------- /get Method ----------------->
     <div class="method_container">
 
         <div class="code_heading_container">
-            <h3 class="code_heading"><span id="colored_get">/get </span> <span class="method_text">method</span></h3>
+            <h3 class="code_heading"><span id="colored_get">/api </span> <span class="method_text">method</span></h3>
         </div>
 
         <div class="method_info_container">
@@ -118,7 +134,7 @@
     <div class="method_container">
 
         <div class="code_heading_container">
-            <h3 class="code_heading"><span id="colored_get_random">/get/random </span> <span
+            <h3 class="code_heading"><span id="colored_get_random">/api/random </span> <span
                     class="method_text">method</span></h3>
         </div>
 
@@ -147,7 +163,7 @@
     <div class="method_container">
 
         <div class="code_heading_container">
-            <h3 class="code_heading"><code id="colored_get_id">/get/id/&ltint:id&gt </code> <span
+            <h3 class="code_heading"><code id="colored_get_id">/api/id/&ltint:id&gt </code> <span
                     class="method_text">method</span></h3>
         </div>
 
