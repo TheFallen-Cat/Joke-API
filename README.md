@@ -1,1 +1,1 @@
-![JokeAPI]("app/static/images/newlogo.svg")
+![JokeAPI](app/static/images/newlogo.svg)
