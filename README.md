@@ -1,1 +1,1 @@
-![JokeAPI]("https://github.com/TheFallen-Cat/VocabiPy/blob/master/ui-images/LightMode.PNG")
+![JokeAPI]("app/static/images/newlogo.svg")
