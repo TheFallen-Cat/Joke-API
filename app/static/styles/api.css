@@ -1,7 +1,24 @@
+:root {
+    --font-color: rgb(189, 189, 189);
+}
+
 body {
-    background-color: rgb(20, 17, 28);
+    background-color: rgb(18, 18, 18);
     font-family: monospace;
-    padding: 15px;
+    padding: 25px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.30rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(189, 189, 189);
+    border-radius: 5px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -10,81 +27,115 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.method_container {
-    margin: 30px 20px;
+.method-container {
+    margin: 30px 0px;
 }
 
-.code_heading_container {
-    background-color: rgb(53, 45, 75);
+.code-heading-container {
+    background-color: rgb(73, 73, 73);
     padding: 1px;
-    border-left: 5px solid rgb(159, 127, 255);
+    border-left: 5px solid rgb(184, 184, 184);
 }
 
-.code_heading {
+.code-heading {
     margin: 5px;
 }
 
-#colored_get {
+#colored-get {
     color: orange;
 }
 
-#colored_get_random {
+#colored-get-random {
     color: rgb(255, 92, 92);
 }
 
-#colored_get_id {
+#colored-get-id {
     color: rgb(50, 249, 90);
 }
 
-.method_info {
+.method-info {
     font-weight: bold;
-    color: white;
+    color: var(--font-color);
     font-size: 16px;
 }
 
-.flex_container {
+.flex-container {
     display: flex;
+    gap: 10px;
 
 
 }
 
-#id_input {
+#id-input {
     background-color: transparent;
     padding: 2px;
     color: white;
     font-weight: bold;
     outline: none;
     border: 2px solid white;
-    margin-left: 20px;
-    padding: 2px;
+    padding: 2px 5px;
 }
 
-.test_button {
-    padding: 5px;
-    border: 2px solid white;
-    color: white;
-    background-color: rgb(58, 48, 82);
+.test-button {
+    padding: 5px 10px;
+    color: rgb(18, 18, 18);
+    background-color: rgb(233, 233, 233);
     border-radius: 5px;
-    font-weight: bold;
-    font-family: monospace;
-}
-
-.test_button:hover {
-    border-color: rgb(0, 255, 51);
-}
-
-.method_text {
-    color: white;
-}
-
-#options_container {
-    margin: 20px;
-}
-
-#home_link {
-    color: white;
-    text-decoration: none;
-    font-family: monospace;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 16px;
+    font-family: monospace;
+    transition: all 0.2s;
+}
+
+.test-button:hover {
+    background-color: rgb(213, 213, 213);
+}
+
+.method-text {
+    color: var(--font-color);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+#logo {
+    width: 8rem;
+
+}
+
+#main-ul {
+    display: flex;
+    gap: 20px;
+}
+
+.hyperlinks {
+    color: var(--font-color);
+    list-style: none;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.hyperlinks:hover {
+    color: white;
+}
+
+.hyperlinks {
+    text-decoration: none;
+}
+
+#credit-text {
+    color: var(--font-color);
+    margin: 0px;
+    text-align: center;
+}
+
+i {
+    color: red;
 }

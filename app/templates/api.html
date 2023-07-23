@@ -5,32 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Usage</title>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-
     <script src="{{ url_for('static', filename='scripts/api.js') }}" type="text/javascript" defer></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/api.css') }}">
-
+    <script src="https://kit.fontawesome.com/f33dbf32ac.js" crossorigin="anonymous"></script>
 
 </head>
+
 
 <body>
 
 
-    <div id="options_container">
-        <a href="/" id="home_link">
-            < Back to Home</a>
-    </div>
-    <!----------------- /get Method ----------------->
-    <div class="method_container">
+    <nav id="navbar">
 
-        <div class="code_heading_container">
-            <h3 class="code_heading"><span id="colored_get">/api </span> <span class="method_text">method</span></h3>
+        <div id="logo-container">
+            <img src="images/newlogo.svg" alt="Main Logo" id="logo">
         </div>
 
-        <div class="method_info_container">
-            <p class="method_info">
+        <div id="links-container">
+            <ul id="main-ul">
+                <a href="/about" class="hyperlinks"><li>About</li>
+                </a>
+                <a href="https://github.com/TheFallen-Cat/Joke-API" target="_blank" class="hyperlinks"><li>Github</li></a>
+            </ul>
+        </div>
+    </nav>
+    <!----------------- /get Method ----------------->
+    <div class="method-container">
+
+        <div class="code-heading-container">
+            <h3 class="code-heading"><span id="colored-get">/</span> <span class="method-text">method</span></h3>
+        </div>
+
+        <div class="method-info-container">
+            <p class="method-info">
                 Renders this webpage.
             </p>
         </div>
@@ -38,26 +49,26 @@
     </div>
 
     <!----------------- /get/random Method ----------------->
-    <div class="method_container">
+    <div class="method-container">
 
-        <div class="code_heading_container">
-            <h3 class="code_heading"><span id="colored_get_random">/api/random </span> <span
-                    class="method_text">method</span></h3>
+        <div class="code-heading-container">
+            <h3 class="code-heading"><span id="colored-get-random">/random </span> <span
+                    class="method-text">method</span></h3>
         </div>
 
-        <div class="method_info_container">
-            <p class="method_info">
+        <div class="method-info-container">
+            <p class="method-info">
                 Returns a random joke from the dataset in JSON Format.
             </p>
         </div>
 
-        <div class="try_it_container">
+        <div class="try-it-container">
 
-            <button class="test_button" id="random_test_button">Test</button>
+            <button class="test-button" id="random-test-button">Test</button>
 
-            <div class="output_container">
+            <div class="output-container">
                 <pre>
-                    <code id="get_random_code_block">
+                    <code id="get-random-code-block">
                     </code>
                 </pre>
 
@@ -67,31 +78,31 @@
     </div>
 
     <!----------------- /get/id/<int:id> Method ----------------->
-    <div class="method_container">
+    <div class="method-container">
 
-        <div class="code_heading_container">
-            <h3 class="code_heading"><code id="colored_get_id">/api/id/&ltint:id&gt </code> <span
-                    class="method_text">method</span></h3>
+        <div class="code-heading-container">
+            <h3 class="code-heading"><code id="colored-get-id">/id/&ltint:id&gt </code> <span
+                    class="method-text">method</span></h3>
         </div>
 
-        <div class="method_info_container">
-            <p class="method_info">
+        <div class="method-info-container">
+            <p class="method-info">
                 Returns a random joke from the dataset with the specified id in JSON Format.
                 &ltint:id&gt is the paramter to pass while requesting the webpage. It accepts an Integer.
             </p>
         </div>
 
-        <div class="try_it_container">
+        <div class="try-it-container">
 
-            <div class="flex_container">
-                <button class="test_button" id="id_test_button">Test</button>
-                <input type="number" id="id_input" placeholder="Joke ID">
+            <div class="flex-container">
+                <input type="number" id="id-input" placeholder="Joke ID">
+                <button class="test-button" id="id-test-button">Test</button>
 
             </div>
 
-            <div class="output_container">
+            <div class="output-container">
                 <pre>
-                    <code id="get_by_id_code_block">
+                    <code id="get-by-id-code-block">
                     
                     </code>
                 </pre>
@@ -99,6 +110,14 @@
             </div>
 
         </div>
+
+        <footer>
+            <div id="credit-container">
+                <h3 id="credit-text">
+                    Made with <i class="fa-solid fa-heart fa-fade"></i> by Abhay
+                </h3>
+            </div>
+        </footer>
 
 </body>
 

@@ -20,19 +20,21 @@ class Joke(db.Model):
 
     def __init__(self, joke):
         self.joke = joke
-    
 
+
+# Return 404 Error if page not found
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template("page404.html")
+
+
+# Home Page
 @app.route("/")
 def home():
-    return render_template("home.html")
-
-
-@app.route("/api/")
-def get_page():
     return render_template("api.html")
 
-
-@app.route("/api/random")
+# Get Random jokes
+@app.route("/random")
 def return_random_joke():
 
     no_of_rows = Joke.query.count()
@@ -45,7 +47,8 @@ def return_random_joke():
 
     return json_joke
 
-@app.route("/api/id/<int:id>")
+# Get Jokes with their ID
+@app.route("/id/<int:id>")
 def id_joke(id):
     
     joke = Joke.query.filter_by(id=id).first()
@@ -53,12 +56,6 @@ def id_joke(id):
     json_joke = {'id':joke.id, 'main_joke':joke.joke}
 
     return json_joke
-
-
-@app.route("/about/")
-def about_page():
-
-    return render_template("about.html")
 
 
 if __name__ == "__main__":
