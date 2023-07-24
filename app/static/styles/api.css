@@ -74,6 +74,7 @@ input[type=number]::-webkit-outer-spin-button {
     outline: none;
     border: 2px solid white;
     padding: 2px 5px;
+    border-radius: 5px;
 }
 
 .test-button {

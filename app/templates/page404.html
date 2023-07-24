@@ -3,8 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Not Found</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pagenotfound.css') }}">
+    <script src="https://kit.fontawesome.com/f33dbf32ac.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>Uh oh, we couldn't find what you're looking for.</h1>
+    <div id="error-message-container">
+        <i class="fa-regular fa-circle-xmark"></i>        
+        <h1 id="error-heading">404 Page not found</h1>
+
+    </div>
 </body>
 </html>
