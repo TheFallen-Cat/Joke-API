@@ -20,8 +20,6 @@
 
 <p>I try to make tools and projects that can help other fellow developers, your <a href=https://ko-fi.com/abhayshukla>support</a> would be helpful for me to continue doing this.</p>
 
-[![kofi Image](https://storage.ko-fi.com/cdn/brandasset/kofi_button_stroke.png)](https://ko-fi.com/abhayshukla)
-
 <p>If you can't donate, consider starring 🌟 the Repo, that will help too!<p>
 
 <h1>Development 💻 </h1>
