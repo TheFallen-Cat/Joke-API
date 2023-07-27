@@ -2,13 +2,8 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS, cross_origin
 import random
-import aiohttp
-import asyncio
 import os
-import datetime
-import threading
-import requests
-import time
+
 
 app = Flask(__name__, template_folder="templates", static_url_path="", static_folder="static")
 
@@ -70,44 +65,12 @@ def id_joke(id):
 
     return json_joke
 
-# This function requests the webpage at an interval to prevent it form spinning down
 
-async def perform_periodic_request():
-    url = 'https://jokeapi.ddns.net'
-    interval = 5
-
-    while True:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
-                if response.status == 200:
-                    print(f"succesful request sent at {datetime.datetime.now()}")
-
-        await asyncio.sleep(interval)
-
-async def start_request():
-    while True:
-        await perform_periodic_request()
-
-def send_request():
-
-    interval = 5
-
-    while True:
-        time.sleep(interval)
-
-        req = requests.get("http://127.0.0.1:5000/random")
-        print(req)
-        
 
 if __name__ == "__main__":
 
-    print("Started service")
-
-    request_thread = threading.Thread(target=send_request)
-    request_thread.daemon = True
-    request_thread.start()
-
     app.run()
+
 
 
 
