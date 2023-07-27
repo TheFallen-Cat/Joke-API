@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/TheFallen-Cat/Joke-API/blob/master/app/static/images/newlogo.svg" alt="JokeAPI"/>
+  <img src="https://github.com/TheFallen-Cat/Joke-API/blob/master/static/images/newlogo.svg" alt="JokeAPI"/>
 </p>
 
 <h3 align=center> <i>  <i> 🔥 </i> A simple API to integrate Jokes into your apps</i> </h3>
