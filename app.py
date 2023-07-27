@@ -90,6 +90,8 @@ if __name__ == "__main__":
     flask_thread = threading.Thread(target=app.run)
     flask_thread.start()
 
+    print("Started service")
+
     async_loop = asyncio.get_event_loop()
 
     async_loop.run_until_complete(start_request())
