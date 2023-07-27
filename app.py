@@ -7,6 +7,8 @@ import asyncio
 import os
 import datetime
 import threading
+import requests
+import time
 
 app = Flask(__name__, template_folder="templates", static_url_path="", static_folder="static")
 
@@ -86,15 +88,27 @@ async def start_request():
     while True:
         await perform_periodic_request()
 
+def send_request():
+
+    interval = 5
+
+    while True:
+        time.sleep(interval)
+
+        req = requests.get("http://127.0.0.1:5000/random")
+        print(req)
+        
+
 if __name__ == "__main__":
-    flask_thread = threading.Thread(target=app.run)
-    flask_thread.start()
 
     print("Started service")
 
-    async_loop = asyncio.get_event_loop()
+    request_thread = threading.Thread(target=send_request)
+    request_thread.daemon = True
+    request_thread.start()
 
-    async_loop.run_until_complete(start_request())
+    app.run()
+
 
 
         
