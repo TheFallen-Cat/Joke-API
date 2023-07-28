@@ -12,6 +12,8 @@
     <script src="{{ url_for('static', filename='scripts/api.js') }}" type="text/javascript" defer></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/api.css') }}">
     <script src="https://kit.fontawesome.com/f33dbf32ac.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
+
 
 </head>
 
@@ -27,8 +29,6 @@
 
         <div id="links-container">
             <ul id="main-ul">
-                <a href="/about" class="hyperlinks"><li>About</li>
-                </a>
                 <a href="https://github.com/TheFallen-Cat/Joke-API" target="_blank" class="hyperlinks"><li>Github</li></a>
             </ul>
         </div>
@@ -68,7 +68,7 @@
 
             <div class="output-container">
                 <pre>
-                    <code id="get-random-code-block">
+                    <code id="get-random-code-block" class="code-block">
                     </code>
                 </pre>
 
@@ -102,7 +102,7 @@
 
             <div class="output-container">
                 <pre>
-                    <code id="get-by-id-code-block">
+                    <code id="get-by-id-code-block" class="code-block">
                     
                     </code>
                 </pre>

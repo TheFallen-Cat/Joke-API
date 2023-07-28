@@ -59,6 +59,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 16px;
 }
 
+.code-block {
+    color: white;
+}
+
 .flex-container {
     display: flex;
     gap: 10px;
